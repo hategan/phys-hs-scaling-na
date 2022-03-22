@@ -1,0 +1,16 @@
+<project name="phys-hs-scaling-na" default="jar">
+	<path id="classpath">
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	<target name="compile">
+		<mkdir dir="build"/>
+		<javac srcdir="src" destdir="build" classpathref="classpath" includeantruntime="false"/>
+	</target>
+	<target name="jar" depends="compile">
+		<jar jarfile="lib/phys-hs-scaling-na.jar">
+			<fileset dir="build" includes="**/*"/>
+		</jar>
+	</target>
+</project>
